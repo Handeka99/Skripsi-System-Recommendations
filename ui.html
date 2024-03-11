@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="searchcss.css" />
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Temukan Kafe Anda</h2>
+            <div class="input-field">
+              <i class="fa-solid fa-mug-saucer"></i>
+              <input type="text" placeholder="Nama Kafe" />
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                <input type="text" placeholder="Sebutkan Harganya" />
+              </div>
+            <div class="input-field">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" placeholder="Sebutkan Lokasinya" />
+            </div>
+           
+            <input type="submit" value="Mari Mencari" class="btn solid" />
+
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">
+              Temukan Restoran Anda
+            </h2>
+            <div class="input-field">
+              <i class="fa-solid fa-burger"></i>
+              <input type="text" placeholder="Nama Makanan" />
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                <input type="text" placeholder="Sebutkan Harganya" />
+              </div>
+            <div class="input-field">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" placeholder="Sebutkan Lokasinya" />
+            </div>
+
+            <div class="rating-box">
+                <header>cari rating berapa?</header>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+            </div>
+            <input type="submit" class="btn" value="Mari Mencari" />
+
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Mau Cari Restoran ?</h3>
+            <p>
+              Klik Tombol Dibawah Ini
+            </p>
+            <button class="btn transparent" id="sign-up-btn">Beralih Ke Restoran</button>
+          </div>
+          <img src="coffee.png" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Mau Cari Kafe ?</h3>
+            <p>
+              Klik Tombol Dibawah Ini
+            </p>
+            <button class="btn transparent" id="sign-in-btn">Beralih Ke Kafe</button>
+          </div>
+          <img src="salad.png" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="searchjs.js"></script>
+
+    <script>
+      const stars = document.querySelectorAll(".stars i");
+        // Loop through the "stars" NodeList
+        stars.forEach((star, index1) => {
+        // Add an event listener that runs a function when the "click" event is triggered
+        star.addEventListener("click", () => {
+            // Loop through the "stars" NodeList Again
+            stars.forEach((star, index2) => {
+            // Add the "active" class to the clicked star and any stars with a lower index
+            // and remove the "active" class from any stars with a higher index
+            index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+            });
+        });
+        });
+    </script>
+
+  </body>
+</html>
